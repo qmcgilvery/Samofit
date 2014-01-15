@@ -435,14 +435,25 @@
 	
 .mobile{
 	margin:10% auto;
-	width:50%;
+	width:80%;
 	background-color:#ADD8E6;
 	border:5px solid #ADD8E6;
 	border-radius:5px;
 }
 
-.mobile li{
+.mobile h1 {
+	text-align:center;
+	margin-bottom:5%;
+}
+
+.mobile li {
 	list-style:none;
+	margin:auto;
+	width:25%;
+}
+
+.mobile a {
+	color:red;
 }
     
 /* Custom */
