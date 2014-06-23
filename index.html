@@ -7,6 +7,83 @@
         <!--<link href="http://samofit.com/css/newsamofit.css" rel="stylesheet" />-->
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+        <script>
+// This is called with the results from from FB.getLoginStatus().
+function statusChangeCallback(response) {
+	console.log('statusChangeCallback');
+	console.log(response);
+	if (response.status === 'connected') {
+		testAPI();
+	} else if (response.status === 'not_authorized') {
+		document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+	} else {
+		document.getElementById('status').innerHTML = 'Log in ' + 'with Facebook.';
+	}
+}
+
+// This function is called when someone finishes with the Login Button.  
+function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+}
+
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1379454819008951',
+    cookie     : true,  
+                        
+    xfbml      : true,  
+    version    : 'v2.0' 
+});
+
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+};
+   // Load the SDK asynchronously
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+} (document, 'script', 'facebook-jssdk'));
+ 
+function testAPI() {
+	FB.api('/me', function(response) {
+		document.getElementById('username').value = response.email;
+	    document.getElementById('first_name').value = response.first_name;
+		document.getElementById('password').value = response.email;
+	    document.getElementById('last_name').value = response.last_name;
+	    document.getElementById('email').value = response.email;
+		document.getElementById("formy").submit();
+		//FB.logout(function(response) {
+		// user is now logged out
+		//});
+	});
+}
+
+function getUserInfo() {
+	FB.api('/me', function(response) {	
+		var str ="<b>Name</b> : "+response.name+"<br>";
+			str +="<b>Link: </b>"+response.link+"<br>";
+		  	str +="<b>Username:</b> "+response.username+"<br>";
+		  	str +="<b>id: </b>"+response.id+"<br>";
+		  	str +="<b>Email:</b> "+response.email+"<br>";
+		  	str +="<input type='button' value='Get Photo' onclick='getPhoto();'/>";
+		  	str +="<input type='button' value='Logout' onclick='Logout();'/>";
+		  	document.getElementById("status").innerHTML+=str;
+	});
+}
+	
+function getPhoto() {
+	FB.api('/me/picture?type=normal', function(response) {
+		var str="<br/><b>Pic</b> : <img src='"+response.data.url+"'/>";
+	  		document.getElementById("status").innerHTML+=str;
+	});
+}
+</script>
     </head>
 <body>
 
@@ -39,7 +116,38 @@
     
 	
     </div>
- 
+ <form id="formy" data-ajax="false" class="navbar-form navbar-left" action="fb_login_processor.php" method="post">
+<div class="form-group">
+    <ul id= "login">
+    	<li>	
+            <input id="username" type="hidden" name="username"/>
+        </li>
+        <li>
+            <input id="password" type="hidden" name="password"/>
+        </li>
+        <li>
+            <input id="email" type="hidden" name="email" />
+        </li>
+        <li>
+            <input id="first_name" type="hidden" name="first_name"/>
+        </li>
+        <li>
+            <input id="last_name" type="hidden" name="last_name"/>
+        </li>
+     </ul>
+</div>    
+</form>
+
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+<fb:login-button data-size="large" scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+<div id="pic">
+</div>
 </div><!--content-->
 </div><!--page-->
 </body>
