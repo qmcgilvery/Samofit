@@ -1,164 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Page Title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css">
-        <link rel="stylesheet" href="http://samofit.com/css/newsamofit.css">
-        <link rel="stylesheet" href="css/bootstrap2.css" type="text/css">
-        <script src="bootstrap.min.js"></script>
-        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
-			
-		<script>
-		// This is called with the results from from FB.getLoginStatus().
-		function statusChangeCallback(response) {
-			console.log('statusChangeCallback');
-			console.log(response);
-			if (response.status === 'connected') {
-				testAPI();
-			} else if (response.status === 'not_authorized') {
-				document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
-			} else {
-				document.getElementById('status').innerHTML = 'Log in ' + 'with Facebook.';
-			}
-		}
+  <head>
+    <title>Acceleration Example</title>
 
-		// This function is called when someone finishes with the Login Button.  
-		function checkLoginState() {
-			FB.getLoginStatus(function(response) {
-			  statusChangeCallback(response);
-			});
-		}
+    <script type="text/javascript" charset="utf-8">
 
-		window.fbAsyncInit = function() {
-		  FB.init({
-			appId      : '1379454819008951',
-			cookie     : true,  
-								
-			xfbml      : true,  
-			version    : 'v2.0' 
-		});
+    // The watch id references the current `watchAcceleration`
+    var watchID = null;
 
-		FB.getLoginStatus(function(response) {
-			statusChangeCallback(response);
-		  });
-		};
-		   // Load the SDK asynchronously
-		(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/sdk.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		} (document, 'script', 'facebook-jssdk'));
-		 
-		function testAPI() {
-			FB.api('/me', function(response) {
-				document.getElementById('user').value = response.email;
-				document.getElementById('first').value = response.first_name;
-				document.getElementById('pass').value = response.email;
-				document.getElementById('last').value = response.last_name;
-				document.getElementById('mail').value = response.email;
-				document.getElementById("formy").submit();
-				//FB.logout(function(response) {
-				// user is now logged out
-				//});
-			});
-		}
+    // Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
-		function getUserInfo() {
-			FB.api('/me', function(response) {	
-				var str ="<b>Name</b> : "+response.name+"<br>";
-					str +="<b>Link: </b>"+response.link+"<br>";
-					str +="<b>Username:</b> "+response.username+"<br>";
-					str +="<b>id: </b>"+response.id+"<br>";
-					str +="<b>Email:</b> "+response.email+"<br>";
-					str +="<input type='button' value='Get Photo' onclick='getPhoto();'/>";
-					str +="<input type='button' value='Logout' onclick='Logout();'/>";
-					document.getElementById("status").innerHTML+=str;
-			});
-		}
-			
-		function getPhoto() {
-			FB.api('/me/picture?type=normal', function(response) {
-				var str="<br/><b>Pic</b> : <img src='"+response.data.url+"'/>";
-					document.getElementById("status").innerHTML+=str;
-			});
-		}
-		</script>
-</head>
-<body>
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+        startWatch();
+    }
 
-<div data-role="page" id="foo" data-theme="b">
+    // Start watching the acceleration
+    //
+    function startWatch() {
 
-	<div data-role="header">
-        <h1>SaMo Fit</h1>
-	</div>
+        // Update acceleration every 3 seconds
+        var options = { frequency: 3000 };
 
+        watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+    }
 
-	<div role="main" class="ui-content">
-    
-   <div data-role="listview" data-shadow="false" data-inset="true">
+    // Stop watching the acceleration
+    //
+    function stopWatch() {
+        if (watchID) {
+            navigator.accelerometer.clearWatch(watchID);
+            watchID = null;
+        }
+    }
 
-    <form data-ajax="false" action="http://www.samofit.com/login_mobile.php" method="post">
-            	<label for="username">Username:</label>
-				<input name="username" id="username" value="" type="text">
-            
-            	<label for="password">Password:</label>
-				<input name="password" id="password" value="" autocomplete="off" type="password">
-                
-            	<input type="submit" value="login" />
-      </form>     
+    // onSuccess: Get a snapshot of the current acceleration
+    //
+    function onSuccess(acceleration) {
+        var element = document.getElementById('accelerometer');
+        element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
+                            'Acceleration Y: ' + acceleration.y + '<br />' +
+                            'Acceleration Z: ' + acceleration.z + '<br />' +
+                            'Timestamp: '      + acceleration.timestamp + '<br />';
+    }
 
-            	<p>
-					Forgotten your <a href="http://samofit.com/mrecover.php?mode=username"> Username </a> or 
-					<a href="http://samofit.com/mrecover.php?mode=password"> Password?</a>
-				</p>
-				<p>
-					Not a member? <a href="http://samofit.com/mregister.php">Sign up today!</a>
-				</p><br><br>
-	<div class="mfb">
-    <span class="d-t">
-<fb:login-button data-size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">
-Sign in with Facebook
-</fb:login-button><br><br><br>
-<p class="smaller text-muted text-center">If you login with facebook and are not a member<br> you will be automatically registered.</p></span>
-	
-    </div>
- <form id="formy" data-ajax="false" type="hidden" action="http://www.samofit.com/mfb_login_processor.php" method="post">
-<div class="form-group">
-    <ul id= "login">
-    	<li>	
-            <input id="user" type="hidden" name="username"/>
-        </li>
-        <li>
-            <input id="pass" type="hidden" name="password"/>
-        </li>
-        <li>
-            <input id="mail" type="hidden" name="email" />
-        </li>
-        <li>
-            <input id="first" type="hidden" name="first_name"/>
-        </li>
-        <li>
-            <input id="last" type="hidden" name="last_name"/>
-        </li>
-     </ul>
-</div>    
-</form>
+    // onError: Failed to get the acceleration
+    //
+    function onError() {
+        alert('onError!');
+    }
 
-
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
--->
-
-</div>
-<div id="pic">
-</div>
-</div><!--content-->
-</div><!--page-->
-</body>
+    </script>
+  </head>
+  <body>
+    <div id="accelerometer">Waiting for accelerometer...</div>
+  </body>
 </html>
