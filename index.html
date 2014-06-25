@@ -4,7 +4,12 @@
     <title>Acceleration Example</title>
 
 	<script  type="text/javascript" src="phonegap.js"></script>
-    <script type="text/javascript" charset="utf-8">
+    
+  </head>
+  <body>
+    <h1>Example</h1>
+    <p>getCurrentAcceleration</p>
+	<script type="text/javascript" charset="utf-8">
 
    function onSuccess(acceleration) {
     alert('Acceleration X: ' + acceleration.x + '\n' +
@@ -20,9 +25,5 @@ function onError() {
 navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 	
     </script>
-  </head>
-  <body>
-    <h1>Example</h1>
-    <p>getCurrentAcceleration</p>
   </body>
 </html>
