@@ -15,7 +15,10 @@
     <author href="http://samofit.com" email="qmcgilvery12@gmail.com">
         Quentin McGilvery
     </author>
-	<feature name="http://api.phonegap.com/1.0/network"></feature> 
+	<feature name="http://api.phonegap.com/1.0/network"></feature>
+<feature name="Accelerometer">
+    <param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
+</feature>	
     <!--
         If you do not want any permissions to be added to your app, add the
         following tag to your config.xml; you will still have the INTERNET
