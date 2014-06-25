@@ -5,22 +5,35 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+    }
+
+    // onSuccess: Get a snapshot of the current acceleration
+    //
     function onSuccess(acceleration) {
-    alert('Acceleration X: ' + acceleration.x + '\n' +
-          'Acceleration Y: ' + acceleration.y + '\n' +
-          'Acceleration Z: ' + acceleration.z + '\n' +
-          'Timestamp: '      + acceleration.timestamp + '\n');
-};
+        var element = document.getElementById('accelerometer');
+        element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
+                            'Acceleration Y: ' + acceleration.y         + '<br />' +
+                            'Acceleration Z: ' + acceleration.z         + '<br />' +
+                            'Timestamp: '      + acceleration.timestamp + '<br />';
+    }
 
-function onError() {
-    alert('onError!');
-};
+    // onError: Failed to get the acceleration
+    //
+    function onError() {
+        alert('onError!');
+    }
 
-navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
     </script>
   </head>
   <body>
-    <h1>Example</h1>
-    <p>getCurrentAcceleration</p>
+    <div id="accelerometer">Waiting for accelerometer...</div>
   </body>
 </html>
