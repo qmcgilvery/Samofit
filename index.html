@@ -1,54 +1,408 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="jquery.mobile.1.0a1.min.css" />  
-        <script src="jquery.1.4.3.min.js"></script>  
-        <script src="jquery.mobile.1.0a1.min.js"></script>  
-        <script type="text/javascript" src="phonegap.js"></script>
+<head>
+	<title>Acceleration Example</title>
+
+	<link rel="stylesheet" href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.common.min.css">
+	<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="css/bootstrap2.css">
+	
+	<script type="text/javascript" src="phonegap.js"></script>
+	<script type="text/javascript" charset="utf-8">	</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="http://cdn.kendostatic.com/2014.1.416/js/kendo.ui.core.min.js"></script>
+						<!--<script src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
+
+						<script>
+						// Wait for device API libraries to load
+						//
+						document.addEventListener("deviceready", onDeviceReady, false);
+
+						// device APIs are available
+						//
+						function onDeviceReady() {
+							navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+						}
+
+						// onSuccess: Get a snapshot of the current acceleration
+						//
+						function onSuccess(acceleration) {
+							alert('Acceleration X: ' + acceleration.x + '\n' +
+								  'Acceleration Y: ' + acceleration.y + '\n' +
+								  'Acceleration Z: ' + acceleration.z + '\n' +
+								  'Timestamp: '      + acceleration.timestamp + '\n');
+						}
+
+						// onError: Failed to get the acceleration
+						//
+						function onError() {
+							alert('onError!');
+						}
+
+						</script>-->
+</head>
+  <body>
+        <div data-role="view" id="drawer-home" data-layout="drawer-layout" data-title="New">
+            <ul data-role="listview" class="inboxList">
+                <li>
+                    <a href="workout1">
+                        <h3 class="time">7/7/14</h3><h3>Amateur</h3>
+                        <h2>High intensity</h2>
+                        <p>Slip, Catch, Rock</p>   
+                    </a>    
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Pull, Pivot-out</p>
+                </li>>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>Medium intensity</h2>
+                    <p>Slip, Under, Catch, Rock</p>
+                </li>>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>Low intensity</h2>
+                    <p>Slip, Slip slip roll, Rock</p>
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur</h3>
+                    <h2>High intensity</h2>
+                    <p>Pivot-in, Catch, Rock</p>
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur bout</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Catch, Rock</p>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="view" id="drawer-starred" data-layout="drawer-layout" data-title="Amateur">
+            <ul data-role="listview" class="inboxList">
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Catch, Rock</p>    
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Pull, Pivot-out</p>
+                </li>>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>Medium intensity</h2>
+                    <p>Slip, Under, Catch, Rock</p>
+                </li>>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>Low intensity</h2>
+                    <p>Slip, Slip slip roll, Rock</p>
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur</h3>
+                    <h2>High intensity</h2>
+                    <p>Pivot-in, Catch, Rock</p>
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur bout</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Catch, Rock</p>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="view" id="drawer-drafts" data-layout="drawer-layout" data-title="Prospect">
+            <ul data-role="listview" class="inboxList">
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Catch, Rock</p>    
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Pull, Pivot-out</p>
+                </li>>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>Medium intensity</h2>
+                    <p>Slip, Under, Catch, Rock</p>
+                </li>>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>Low intensity</h2>
+                    <p>Slip, Slip slip roll, Rock</p>
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur</h3>
+                    <h2>High intensity</h2>
+                    <p>Pivot-in, Catch, Rock</p>
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur bout</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Catch, Rock</p>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="view" id="drawer-sent" data-layout="drawer-layout" data-title="Contender">
+            <ul data-role="listview" class="inboxList">
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Catch, Rock</p>    
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Pull, Pivot-out</p>
+                </li>>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>Medium intensity</h2>
+                    <p>Slip, Under, Catch, Rock</p>
+                </li>>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>Low intensity</h2>
+                    <p>Slip, Slip slip roll, Rock</p>
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur</h3>
+                    <h2>High intensity</h2>
+                    <p>Pivot-in, Catch, Rock</p>
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur bout</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Catch, Rock</p>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="view" id="drawer-deleted" data-layout="drawer-layout" data-title="Champion">
+            <ul data-role="listview" class="inboxList">
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Catch, Rock</p>    
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Pull, Pivot-out</p>
+                </li>>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>Medium intensity</h2>
+                    <p>Slip, Under, Catch, Rock</p>
+                </li>>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>Low intensity</h2>
+                    <p>Slip, Slip slip roll, Rock</p>
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur</h3>
+                    <h2>High intensity</h2>
+                    <p>Pivot-in, Catch, Rock</p>
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur bout</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Catch, Rock</p>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="view" id="drawer-spam" data-layout="drawer-layout" data-title="GOAT">
+           <ul data-role="listview" class="inboxList">
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Catch, Rock</p>    
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Pull, Pivot-out</p>
+                </li>>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>Medium intensity</h2>
+                    <p>Slip, Under, Catch, Rock</p>
+                </li>>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Pro</h3>
+                    <h2>Low intensity</h2>
+                    <p>Slip, Slip slip roll, Rock</p>
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur</h3>
+                    <h2>High intensity</h2>
+                    <p>Pivot-in, Catch, Rock</p>
+                </li>
+                <li>
+                    <h3 class="time">7/7/14</h3><h3>Amateur bout</h3>
+                    <h2>High intensity</h2>
+                    <p>Slip, Catch, Rock</p>
+                </li>
+            </ul>
+        </div>
+         <div data-role="view" id="workout1a" data-layout="defaultlayout">
+             
+         	
+             
+         </div>   
+        
+        <div data-role="view" id="workout1" data-layout="defaultlayout" data-title="Workout-1">
+        	<div class="row">
+  		  	<div class="col-xs-12">
+    				<div class="thumbnail">
+      			  	<img src="http://samofit.com/images/kicks2.jpg" alt="kicks" height="300" width="500">
+      				  <div class="center-block caption inboxList">
+                            <h3 class="time">Workout-1</h3><h3>3 Rounds</h3>
+        					<p class="summary">In this workout you will learn the basic punches you will use throughout the program. The jab, cross and the hook.</p>
+        					<br>
+                            <button  onClick="playAudio();" class="btn btn-lg btn-primary btn-block" role="button">Start</button>
+                            <button  onClick="my_media.pause();" class="btn btn-lg btn-primary btn-block" role="button">Pause</button>
+      				  </div>
+    				</div>
+  			  </div>             
+        	</div>           
+        </div>
+
+        <div data-role="drawer" id="my-drawer" style="width: 270px" data-views="['drawer-home', 'drawer-starred', 'drawer-deleted', 'drawer-spam', 'drawer-drafts', 'drawer-sent', '/kendo-ui/mobile/m/drawer/index.html']">
+            <ul data-role="listview" data-type="group">
+                <li>Workouts
+                    <ul>
+                        <li data-icon=""><a href="#drawer-home" data-transition="none">All</a></li>
+                        <li data-icon="star"><a href="#drawer-starred" data-transition="none">Amateur</a></li>
+                        <li data-icon="star"><a href="#drawer-drafts" data-transition="none">Prospect</a></li>
+                        <li data-icon="star"><a href="#drawer-sent" data-transition="none">Contender</a></li>
+                        <li data-icon="star"><a href="#drawer-deleted" data-transition="none">Champion</a></li>
+                        <li data-icon="star"><a href="#drawer-spam" data-transition="none">GOAT</a></li>
+                    </ul>
+                </li>
+                <li>Games
+                    <ul>
+                        <li data-icon="star"><a href="#game-speed" data-transition="none">Speed</a></li>
+                        <li data-icon="star"><a href="#game-power" data-transition="none">Power</a></li>
+                        <li data-icon="star"><a href="#game-stamina" data-transition="none">Stamina</a></li>
+                    </ul>
+                </li>
+                <li>Info
+                    <ul>
+                        <li data-icon="star"><a href="#info-howto" data-transition="none">How to use</a></li>
+                        <li data-icon="star"><a href="#info-feedback" data-transition="none">Send feedback</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+         			 
+
+        <div data-role="layout" data-id="drawer-layout">
+            <header data-role="header">
+                <div data-role="navbar">
+                    <a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="drawer-button" data-align="left"></a>
+                    <span data-role="view-title"></span>
+                    <a data-align="right" data-role="button" class="nav-button" href="#/">Index</a>
+                </div>
+            </header>
+        </div>
+        
+        <div data-role="layout" data-id="defaultlayout">
+            <header data-role="header">
+                <div data-role="navbar">
+                    <a class="nav-button" data-align="left" data-role="backbutton">Back</a>
+                    <span data-role="view-title"></span>
+                    <a data-align="right" data-role="button" class="nav-button" href="#/">Home</a>
+                </div>
+            </header>
+        </div>
+        			  
+
         <script>
-
-            function onLoad()
-            {
-                document.addEventListener('deviceready', onDeviceReady, false);
-            }
-
-            function onDeviceReady()
-            {
-                // do nothing
-                console.log('Device is now ready');
-            }
-
-            var checkBugs = function()
-            {
-                navigator.notification.alert('Ya! No more bugs', null, 'Notification');
-            }
-
-            $(document).ready(function()
-            {
-                $('#bug_button').click(function()
-                {
-                    checkBugs();
-                });
-            });
-
+            // reset global drawer instance, for demo purposes
+            kendo.mobile.ui.Drawer.current = null;
         </script>
-        <style type="text/css">
-            .ui-header, .ui-title
+
+        <style>      
+            .km-drawer-button:before, .km-drawer-button:after  { content: "\E077"; }
+            .km-inbox:before, .km-inbox:after { content: "\E0B0"; }
+            .km-sent:before, .km-sent:after { content: "\E0C6"; }
+            .km-trash:before, .km-trash:after { content: "\E0C3"; }
+            .km-spam:before, .km-spam:after { content: "\E0C5"; }
+            .km-star:before, .km-star:after { content: "\E0D7"; }
+            .km-settings:before, .km-settings:after { content: "\E0DA"; }
+            .km-off:before, .km-off:after { content: "\E0B9"; }
+
+            .inboxList
             {
-                margin-left: 0px !important;
-                margin-right: 0px !important;
+                font-size: .8em;
             }
+
+            .inboxList p,
+            .inboxList h2,
+            .inboxList h3
+            {
+                margin: 5px 2px;
+            }
+
+            .inboxList p,
+            .inboxList h3
+            {
+                color: #777;
+            }
+
+            .inboxList h3.time
+            {
+                color: #369;
+                float: left;
+                margin-right: 10px;
+            }
+            
+            .km-android .km-view:not(.km-splitview) 
+            {
+            -webkit-box-direction: normal;
+            -moz-box-direction: normal;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+        	}
+                        
         </style>
 
-    </head>
-    <body onload="onLoad()">
-        <div data-role="page">
-            <div data-role="header">
-                <h1>Hello Debugging World</h1>
-            </div>
-            <div data-role="content">
-                <input type="button" id="bug_button" value="Check For Bugs">
-            </div>
-        </div>
-        </div>
+		<script>
+        	           
+             url = "Audio/12-9-13.wav";
+
+             my_media = new Media(url);
+            
+            function playAudio(url) 
+            {
+                // Play audio
+                my_media.play();
+                my_media.setVolume('1.0');  
+       	 }
+            
+            function pauseAudio(url) 
+            {
+                // Play audio
+                my_media.pause();
+                console.log("media paused");  
+       	 }
+  
+        </script>
+        
+        <script>
+            var app = new kendo.mobile.Application(document.body);
+        </script>
     </body>
+
 </html>
