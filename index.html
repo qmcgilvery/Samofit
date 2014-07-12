@@ -1,29 +1,54 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>Acceleration Example</title>
+    <head>
+        <link rel="stylesheet" href="jquery.mobile.1.0a1.min.css" />  
+        <script src="jquery.1.4.3.min.js"></script>  
+        <script src="jquery.mobile.1.0a1.min.js"></script>  
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script>
 
-	<script  type="text/javascript" src="phonegap.js"></script>
-    
-  </head>
-  <body>
-    <h1>Example</h1>
-    <p>getCurrentAcceleration</p>
-	<script type="text/javascript" charset="utf-8">
+            function onLoad()
+            {
+                document.addEventListener('deviceready', onDeviceReady, false);
+            }
 
-   function onSuccess(acceleration) {
-    alert('Acceleration X: ' + acceleration.x + '\n' +
-          'Acceleration Y: ' + acceleration.y + '\n' +
-          'Acceleration Z: ' + acceleration.z + '\n' +
-          'Timestamp: '      + acceleration.timestamp + '\n');
-};
+            function onDeviceReady()
+            {
+                // do nothing
+                console.log('Device is now ready');
+            }
 
-function onError() {
-    alert('onError!');
-};
+            var checkBugs = function()
+            {
+                navigator.notification.alert('Ya! No more bugs', null, 'Notification');
+            }
 
-navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-	
-    </script>
-  </body>
+            $(document).ready(function()
+            {
+                $('#bug_button').click(function()
+                {
+                    checkBugs();
+                });
+            });
+
+        </script>
+        <style type="text/css">
+            .ui-header, .ui-title
+            {
+                margin-left: 0px !important;
+                margin-right: 0px !important;
+            }
+        </style>
+
+    </head>
+    <body onload="onLoad()">
+        <div data-role="page">
+            <div data-role="header">
+                <h1>Hello Debugging World</h1>
+            </div>
+            <div data-role="content">
+                <input type="button" id="bug_button" value="Check For Bugs">
+            </div>
+        </div>
+        </div>
+    </body>
 </html>
