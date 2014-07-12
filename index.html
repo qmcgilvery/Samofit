@@ -3,43 +3,15 @@
 <head>
 	<title>Acceleration Example</title>
 
-	<link rel="stylesheet" href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.common.min.css">
-	<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
-	<link rel="stylesheet" href="css/bootstrap2.css">
-	
 	<script type="text/javascript" src="phonegap.js"></script>
 	<script type="text/javascript" charset="utf-8">	</script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" href="kendo.mobile.all.min.css">
+	<link rel="stylesheet" href="css/bootstrap2.css">
+	
+	<script src="jquery.js"></script>
 	<script src="kendo.mobile.min.js"></script>
 
-						<!--<script>
-						// Wait for device API libraries to load
-						//
-						document.addEventListener("deviceready", onDeviceReady, false);
-
-						// device APIs are available
-						//
-						function onDeviceReady() {
-							navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-						}
-
-						// onSuccess: Get a snapshot of the current acceleration
-						//
-						function onSuccess(acceleration) {
-							alert('Acceleration X: ' + acceleration.x + '\n' +
-								  'Acceleration Y: ' + acceleration.y + '\n' +
-								  'Acceleration Z: ' + acceleration.z + '\n' +
-								  'Timestamp: '      + acceleration.timestamp + '\n');
-						}
-
-						// onError: Failed to get the acceleration
-						//
-						function onError() {
-							alert('onError!');
-						}
-
-						</script>-->
 </head>
   <body>
         <div data-role="view" id="drawer-home" data-layout="drawer-layout" data-title="New">
@@ -55,12 +27,12 @@
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>High intensity</h2>
                     <p>Slip, Pull, Pivot-out</p>
-                </li>>
+                </li>
                 <li>
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>Medium intensity</h2>
                     <p>Slip, Under, Catch, Rock</p>
-                </li>>
+                </li>
                 <li>
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>Low intensity</h2>
@@ -90,12 +62,12 @@
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>High intensity</h2>
                     <p>Slip, Pull, Pivot-out</p>
-                </li>>
+                </li>
                 <li>
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>Medium intensity</h2>
                     <p>Slip, Under, Catch, Rock</p>
-                </li>>
+                </li>
                 <li>
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>Low intensity</h2>
@@ -160,12 +132,12 @@
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>High intensity</h2>
                     <p>Slip, Pull, Pivot-out</p>
-                </li>>
+                </li>
                 <li>
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>Medium intensity</h2>
                     <p>Slip, Under, Catch, Rock</p>
-                </li>>
+                </li>
                 <li>
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>Low intensity</h2>
@@ -195,12 +167,12 @@
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>High intensity</h2>
                     <p>Slip, Pull, Pivot-out</p>
-                </li>>
+                </li>
                 <li>
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>Medium intensity</h2>
                     <p>Slip, Under, Catch, Rock</p>
-                </li>>
+                </li>
                 <li>
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>Low intensity</h2>
@@ -230,12 +202,12 @@
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>High intensity</h2>
                     <p>Slip, Pull, Pivot-out</p>
-                </li>>
+                </li>
                 <li>
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>Medium intensity</h2>
                     <p>Slip, Under, Catch, Rock</p>
-                </li>>
+                </li>
                 <li>
                     <h3 class="time">7/7/14</h3><h3>Pro</h3>
                     <h2>Low intensity</h2>
@@ -252,12 +224,7 @@
                     <p>Slip, Catch, Rock</p>
                 </li>
             </ul>
-        </div>
-         <div data-role="view" id="workout1a" data-layout="defaultlayout">
-             
-         	
-             
-         </div>   
+        </div>   
         
         <div data-role="view" id="workout1" data-layout="defaultlayout" data-title="Workout-1">
         	<div class="row">
@@ -332,7 +299,7 @@
             kendo.mobile.ui.Drawer.current = null;
         </script>
 
-        <style>      
+        <style>     
             .km-drawer-button:before, .km-drawer-button:after  { content: "\E077"; }
             .km-inbox:before, .km-inbox:after { content: "\E0B0"; }
             .km-sent:before, .km-sent:after { content: "\E0C6"; }
