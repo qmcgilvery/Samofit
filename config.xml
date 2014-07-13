@@ -22,6 +22,9 @@
         permission on your app, which PhoneGap requires.
     
     <preference name="permissions"                value="none"/>-->
+	<feature name="Accelerometer">
+    <param name="android-package" value="org.apache.cordova.AccelListener" />
+</feature>
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="phonegap-version"           value="3.3.0" />          <!-- all: current version of PhoneGap -->
