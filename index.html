@@ -425,17 +425,17 @@
   <head>
     <title>Acceleration Example</title>
 
-    <script type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript" charset="utf-8" src= "cordova.js"></script>
-	<script>
+    <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
     // The watch id references the current `watchAcceleration`
     var watchID = null;
 
-    // Wait for PhoneGap to load
+    // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
 
-    // PhoneGap is ready
+    // device APIs are available
     //
     function onDeviceReady() {
         startWatch();
@@ -464,9 +464,9 @@
     //
     function onSuccess(acceleration) {
         var element = document.getElementById('accelerometer');
-        element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
-                            'Acceleration Y: ' + acceleration.y + '<br />' +
-                            'Acceleration Z: ' + acceleration.z + '<br />' +
+        element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
+                            'Acceleration Y: ' + acceleration.y         + '<br />' +
+                            'Acceleration Z: ' + acceleration.z         + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
     }
 
