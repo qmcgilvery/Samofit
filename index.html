@@ -345,6 +345,12 @@
         </style>
 
 		<script>
+		
+			document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    // Now safe to use the PhoneGap API
+
         	           
              url = "12-9-13.new.mp3";
 
@@ -363,7 +369,7 @@
                 my_media.pause();
                 console.log("media paused");  
        	 }
-  
+  }
         </script>
         
         <script>
