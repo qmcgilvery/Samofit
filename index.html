@@ -346,9 +346,15 @@
 
 		<script>
 		
-			document.addEventListener("deviceready", onDeviceReady, false);
+			function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
-function onDeviceReady() {
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Now safe to use device APIs
+   
     // Now safe to use the PhoneGap API
 
         	           
