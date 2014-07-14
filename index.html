@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--<html>
+<html>
 <head>
 	<title>Acceleration Example</title>
 
@@ -235,8 +235,8 @@
                             <h3 class="time">Workout-1</h3><h3>3 Rounds</h3>
         					<p class="summary">In this workout you will learn the basic punches you will use throughout the program. The jab, cross and the hook.</p>
         					<br>
-                            <button  onClick="startWatch();" class="btn btn-lg btn-primary btn-block" role="button">Start</button>
-                            <button  onClick="my_media.pause();" class="btn btn-lg btn-primary btn-block" role="button">Pause</button>
+                            <a href="http://samofit.com/audio.html" class="btn btn-primary btn-lg btn-block" role="button">GO!</a>
+                            <button onClick="my_media.pause();" class="btn btn-lg btn-primary btn-block" role="button">Pause</button>
       				  </div>
     				</div>
   			  </div>             
@@ -270,9 +270,7 @@
                 </li>
             </ul>
         </div>
-        
-         			 
-
+                			 
         <div data-role="layout" data-id="drawer-layout">
             <header data-role="header">
                 <div data-role="navbar">
@@ -293,7 +291,6 @@
             </header>
         </div>
         			  
-
         <script>
             // reset global drawer instance, for demo purposes
             kendo.mobile.ui.Drawer.current = null;
@@ -340,61 +337,10 @@
             -moz-box-direction: normal;
             -webkit-flex-direction: column;
             flex-direction: column;
-        	}
-                        
+        	}                      
         </style>
 
-		<script>
-		    // The watch id references the current `watchAcceleration`
-    var watchID = null;
-
-    // Wait for PhoneGap to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // PhoneGap is ready
-    //
-    function onDeviceReady() {
-        startWatch();
-    }
-
-    // Start watching the acceleration
-    //
-    function startWatch() {
-
-        // Update acceleration every 3 seconds
-        var options = { frequency: 3000 };
-
-        watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-    }
-
-    // Stop watching the acceleration
-    //
-    function stopWatch() {
-        if (watchID) {
-            navigator.accelerometer.clearWatch(watchID);
-            watchID = null;
-        }
-    }
-
-    // onSuccess: Get a snapshot of the current acceleration
-    //
-    function onSuccess(acceleration) {
-        var element = document.getElementById('accelerometer');
-        element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
-                            'Acceleration Y: ' + acceleration.y + '<br />' +
-                            'Acceleration Z: ' + acceleration.z + '<br />' +
-                            'Timestamp: '      + acceleration.timestamp + '<br />';
-    }
-
-    // onError: Failed to get the acceleration
-    //
-    function onError() {
-        alert('onError!');
-    }
-
-
-        	           
+		<script>        	           
              url = "12-9-13.new.mp3";
 
              my_media = new Media(url);
@@ -411,74 +357,11 @@
                 // Play audio
                 my_media.pause();
                 console.log("media paused");  
-       	 }
-  
+       	 } 
         </script>
         
         <script>
             var app = new kendo.mobile.Application(document.body);
         </script>
     </body>
-
-</html>-->
-<html>
-  <head>
-    <title>Acceleration Example</title>
-
-    <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // The watch id references the current `watchAcceleration`
-    var watchID = null;
-
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        startWatch();
-    }
-
-    // Start watching the acceleration
-    //
-    function startWatch() {
-
-        // Update acceleration every 3 seconds
-        var options = { frequency: 3000 };
-
-        watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-    }
-
-    // Stop watching the acceleration
-    //
-    function stopWatch() {
-        if (watchID) {
-            navigator.accelerometer.clearWatch(watchID);
-            watchID = null;
-        }
-    }
-
-    // onSuccess: Get a snapshot of the current acceleration
-    //
-    function onSuccess(acceleration) {
-        var element = document.getElementById('accelerometer');
-        element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
-                            'Acceleration Y: ' + acceleration.y         + '<br />' +
-                            'Acceleration Z: ' + acceleration.z         + '<br />' +
-                            'Timestamp: '      + acceleration.timestamp + '<br />';
-    }
-
-    // onError: Failed to get the acceleration
-    //
-    function onError() {
-        alert('onError!');
-    }
-
-    </script>
-  </head>
-  <body>
-    <div id="accelerometer">Waiting for accelerometer...</div>
-  </body>
 </html>
