@@ -306,13 +306,9 @@
                                                 <h3 class="times">Workout-1</h3><h3>3 Rounds</h3>
                                                 <p class="summary">In this workout you will learn the basic punches you will use throughout the program. The jab, cross and the hook.</p>
                                                 <br>
-                                                <a href="http://samofit.com/audio.html" class="btn btn-lg btn-primary btn-block" role="button">Go to</a>
-                                                <script>
-							var audioElement = document.createElement('audio');
-							audioElement.setAttribute('src', 'http://samofit.com/12-9-13.new.mp3');							
-						</script>
-					<button  onClick="audioElement.play();" class="btn btn-lg btn-primary btn-block" role="button">Start</button>
-					<button  onClick="audioElement.pause();" class="btn btn-lg btn-primary btn-block" role="button">Pause</button>
+                                                <a href="http://samofit.com/audio.html" class="btn btn-lg btn-primary btn-block" role="button">Go to</a>                                               
+												<button  onClick="audioElement.play();" class="btn btn-lg btn-primary btn-block" role="button">Start</button>
+												<button  onClick="audioElement.pause();" class="btn btn-lg btn-primary btn-block" role="button">Pause</button>
                                             </div>
                                         </div>
                                     </div>             
@@ -391,6 +387,10 @@
             // reset global drawer instance, for demo purposes
             kendo.mobile.ui.Drawer.current = null;
         </script>
+		<script>
+			var audioElement = document.createElement('audio');
+			audioElement.setAttribute('src', 'http://samofit.com/12-9-13.new.mp3');							
+		</script>
         <style>      
  
 a:active
