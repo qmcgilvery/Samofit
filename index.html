@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="bootstrap2.css">
 	
 	<script src="jquery.js"></script>
+	        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script src="kendo.mobile.min.js"></script>
 	<script src="app.js"></script>
 </head>
@@ -269,28 +270,28 @@
     <ul data-role="listview" data-type="group" class="dark-grey">
         <li>
             <ul>
-                <li data-icon="home" class="drawer-link greybg"><a href="#drawer-home" data-transition="none">Home</a></li>
+                <li class="drawer-link greybg"><a href="#drawer-home" data-transition="none">Home</a></li>
             </ul>
         </li>
         <li>Levels
             <ul>
-                <li data-icon="star" class="drawer-link greybg"><a href="#drawer-amateur" data-transition="none">Amateur</a></li>
-                <li data-icon="star" class="drawer-link grreybg"><a href="#drawer-prospect" data-transition="none">Prospect</a></li>
-                <li data-icon="star" class="drawer-link greybg"><a href="#drawer-contender" data-transition="none">Contender</a></li>
-                <li data-icon="star" class="drawer-link greybg"><a href="#drawer-champion" data-transition="none">Champion</a></li>
+                <li class="drawer-link greybg"><a href="#drawer-amateur" data-transition="none"><span class="glyphicon glyphicon-star"></span>Amateur</a></li>
+                <li class="drawer-link greybg"><a href="#drawer-prospect" data-transition="none">Prospect</a></li>
+                <li class="drawer-link greybg"><a href="#drawer-contender" data-transition="none">Contender</a></li>
+                <li class="drawer-link greybg"><a href="#drawer-champion" data-transition="none">Champion</a></li>
             </ul>
         </li>
         <li>Games
             <ul>
-                <li data-icon=""><a href="#game-speed" class="greybg" data-transition="none">Speed</a></li>
-                <li data-icon=""><a href="#game-power" class="greybg" data-transition="none">Power</a></li>
-                <li data-icon=""><a href="#game-stamina" class="greybg" data-transition="none">Stamina</a></li>
+                <li class="greybg"><a href="#game-speed" data-transition="none">Speed</a></li>
+                <li class="greybg"><a href="#game-power" data-transition="none">Power</a></li>
+                <li class="greybg"><a href="#game-stamina" data-transition="none">Stamina</a></li>
             </ul>
         </li>
         <li>Info
             <ul>
-                <li data-icon="info"><a href="#info-howto" class="greybg" data-transition="none">How to use</a></li>
-                <li data-icon="action"><a href="#info-feedback"  class="greybg" data-transition="none">Send feedback</a></li>
+                <li class="greybg"><a href="#info-howto" data-transition="none">How to use</a></li>
+                <li class="greybg"><a href="#info-feedback" data-transition="none">Send feedback</a></li>
             </ul>
         </li>
     </ul>
@@ -305,8 +306,13 @@
                                                 <h3 class="times">Workout-1</h3><h3>3 Rounds</h3>
                                                 <p class="summary">In this workout you will learn the basic punches you will use throughout the program. The jab, cross and the hook.</p>
                                                 <br>
-                                                <a href="http://samofit.com/audio.html" class="btn btn-lg btn-primary btn-block" role="button">Start</a>
-                                                <button  onClick="pauseAudio();" class="btn btn-lg btn-primary btn-block" role="button">Pause</button>
+                                                <a href="http://samofit.com/audio.html" class="btn btn-lg btn-primary btn-block" role="button">Go to</a>
+                                                <script>
+							var audioElement = document.createElement('audio');
+							audioElement.setAttribute('src', 'http://samofit.com/12-9-13.new.mp3');							
+						</script>
+					<button  onClick="audioElement.play();" class="btn btn-lg btn-primary btn-block" role="button">Start</button>
+					<button  onClick="audioElement.pause();" class="btn btn-lg btn-primary btn-block" role="button">Pause</button>
                                             </div>
                                         </div>
                                     </div>             
