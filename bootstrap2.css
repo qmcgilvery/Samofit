@@ -7377,3 +7377,7 @@ body {
 .mt-fifteen {
     margin-top: 15%;
 } 
+#touch {
+	height:800px;
+	width:400px;
+}
