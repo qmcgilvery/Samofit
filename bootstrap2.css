@@ -5303,6 +5303,7 @@ a.list-group-item.active > .badge,
   display: block;
   /*padding: 4px;*/
   margin-bottom: 40px;
+  margin-top: 50px;
   line-height: 1.428571429;
   /*background-color: #ffffff;
   border: 1px solid #dddddd;
@@ -5334,7 +5335,7 @@ a.thumbnail.active {
 }
 
 .search {
-	background-color: white;
+	background-color: rgba(255, 255, 255, 1);
 }
 
 audio {
@@ -7388,6 +7389,9 @@ body {
 }
 .mt-fifteen {
     margin-top: 15%;
+} 
+.mt-twenty {
+    margin-top: 20%;
 } 
 #touch {
 	height:800px;
