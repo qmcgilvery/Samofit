@@ -80,15 +80,15 @@
                 function(response) {
                     if(response.status === 'connected') {
                         document.getElementById('username').value = response.email;
-	    document.getElementById('first_name').value = response.first_name;
-		document.getElementById('password').value = response.email;
-	    document.getElementById('last_name').value = response.last_name;
-	    document.getElementById('email').value = response.email;
-		document.getElementById("formy").submit();
-		else {
+						document.getElementById('first_name').value = response.first_name;
+						document.getElementById('password').value = response.email;
+						document.getElementById('last_name').value = response.last_name;
+						document.getElementById('email').value = response.email;
+						document.getElementById("formy").submit();
+					else {
                         alert('Facebook login failed: ' + response.error);
                     }
-                }, {scope: 'email,read_stream,publish_stream'});
+                }, {scope: 'public_profile, email'});
         testAPI();
     }
 
