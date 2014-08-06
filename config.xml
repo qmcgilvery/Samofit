@@ -64,7 +64,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
 	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
-    <param name="APP_ID" value="750862244926419" />
+    <param name="APP_ID" value="1379454819008951" />
     <param name="APP_NAME" value="SaMo Fit Login" />
 	</gap:plugin>
     <!-- Third party plugins -->
