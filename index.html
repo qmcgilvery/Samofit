@@ -45,6 +45,8 @@
       <script src="main.js"></script> 
                             <button class="btn btn-block" onclick="login()">Login with Facebook</button>
                         <hr/>
+						<button class="btn btn-block" onclick="getInfo()">Get My Info</button>
+						<hr/>
         </div>                
                         <!--<button class="btn btn-block" onclick="getInfo()">Get My Info</button>
                         <p>Name: <span id="userName"></span></p>
@@ -92,7 +94,7 @@
             path: '/me',
             success: function(data) {
                 console.log(JSON.stringify(data));
-                document.getElementById("userName").innerHTML = data.name;
+                alert(data.email);
                 document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
             },
             error: errorHandler});
