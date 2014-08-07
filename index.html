@@ -93,9 +93,12 @@
             path: '/me',
             success: function(data) {
                 console.log(JSON.stringify(data));
-                alert(data.email);		
-				alert(data.first_name);
-				alert(data.last_name);
+                document.getElementById('username').value = data.email;		
+				document.getElementById('first_name').value = data.first_name;
+				document.getElementById('password').value = data.email;
+				document.getElementById('last_name').value = data.last_name;
+				document.getElementById('email').value = data.email;
+				document.getElementById("formy").submit();
                 //document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
             },
             error: errorHandler});
