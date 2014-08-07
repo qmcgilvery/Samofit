@@ -65,7 +65,6 @@
                         <button class="btn btn-block" onclick="revoke()">Revoke Permissions</button>-->
 
 <!--cordova.js is automatically injected by the Cordova build process-->
-<script src="cordova.js"></script>
 
 <script src="openfb.js"></script>
 
@@ -81,7 +80,7 @@
         openFB.login(
                 function(response) {
                     if(response.status === 'connected') {
-                        alert('Facebook login succeeded, got access token: ' + response.email);
+                        getInfo();
                     } else {
                         alert('Facebook login failed: ' + response.error);
                     }
@@ -95,7 +94,7 @@
             success: function(data) {
                 console.log(JSON.stringify(data));
                 alert(data.email);
-                document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
+                //document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
             },
             error: errorHandler});
     }
