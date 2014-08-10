@@ -10,98 +10,11 @@
     
     <script src="jquery.js"></script>
     <script src="phonegap.js"></script>
-	<script>
-// This is called with the results from from FB.getLoginStatus().
-function statusChangeCallback(response) {
-	console.log('statusChangeCallback');
-	console.log(response);
-	if (response.status === 'connected') {
-		testAPI();
-	} else if (response.status === 'not_authorized') {
-		document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
-	} else {
-		document.getElementById('status').innerHTML = 'Log in ' + 'with Facebook.';
-	}
-}
+    <script type="text/javascript"></script>
+    <script src="kendo.mobile.min.js"></script> 
 
-FB.login(function(response){
-  console.log(response);
-	if (response.status === 'connected') {
-		testAPI();
-	} else if (response.status === 'not_authorized') {
-		document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
-	} else {
-		document.getElementById('status').innerHTML = 'Log in ' + 'with Facebook.';
-	}
-});
-
-// This function is called when someone finishes with the Login Button.  
-function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-}
-
-window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '1379454819008951',
-    cookie     : true,  
-                        
-    xfbml      : true,  
-    version    : 'v2.0' 
-});
-
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-};
-   // Load the SDK asynchronously
-(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-} (document, 'script', 'facebook-jssdk'));
- 
-function testAPI() {
-	FB.api('/me', function(response) {
-		document.getElementById('username').value = response.email;
-	    document.getElementById('first_name').value = response.first_name;
-		document.getElementById('password').value = response.email;
-	    document.getElementById('last_name').value = response.last_name;
-	    document.getElementById('email').value = response.email;
-		//document.getElementById("formy").submit();
-		//FB.logout(function(response) {
-		// user is now logged out
-		//});
-	});
-}
-
-function getUserInfo() {
-	FB.api('/me', function(response) {	
-		var str ="<b>Name</b> : "+response.name+"<br>";
-			str +="<b>Link: </b>"+response.link+"<br>";
-		  	str +="<b>Username:</b> "+response.username+"<br>";
-		  	str +="<b>id: </b>"+response.id+"<br>";
-		  	str +="<b>Email:</b> "+response.email+"<br>";
-		  	str +="<input type='button' value='Get Photo' onclick='getPhoto();'/>";
-		  	str +="<input type='button' value='Logout' onclick='Logout();'/>";
-		  	document.getElementById("status").innerHTML+=str;
-	});
-}
-	
-function getPhoto() {
-	FB.api('/me/picture?type=normal', function(response) {
-		var str="<br/><b>Pic</b> : <img src='"+response.data.url+"'/>";
-	  		document.getElementById("status").innerHTML+=str;
-	});
-}
-</script>
-    <!--<script type="text/javascript"></script>
-    <script src="kendo.mobile.min.js"></script>
-	<script src="main.js"></script>-->
 </head>
+
 <body>
     <div data-role="view">
         <header data-role="header">
@@ -128,34 +41,35 @@ function getPhoto() {
                     Not a SaMo Fit member?<a href="http://www.samofit.com/register.php">Register Today!</a>
                 </li>
           </ul>
-        </form> 
-				 <button class="btn btn-block" onclick="checkLoginState()">Login</button>
-				
-					<button class="btn btn-block" onclick="login()">Login with Facebook</button>
-				<hr/>
-				<button class="btn btn-block" onclick="getInfo()">Get My Info</button>
-				<hr/>
+      </form>
+      <script src="main.js"></script> 
+                            <button class="btn btn-block" onclick="login()">Login with Facebook</button>
+                        <hr/>
+						<button class="btn btn-block" onclick="getInfo()">Get My Info</button>
+						<hr/>
                         
-				<!--<button class="btn btn-block" onclick="getInfo()">Get My Info</button>
-				<p>Name: <span id="userName"></span></p>
-				<img id="userPic"/>
-				<hr/>
-				
-				<textarea id="Message" placeholder="What's on your mind?" rows="5"></textarea>
-				<button class="btn btn-block" onclick="share()">Share</button>
-				<hr/>
-				
-				<p>Complete Facebook Logout. After logging out, you'll have to login again and provide your Facebook credentials.</p>
-				<button class="btn btn-block" onclick="logout()">Logout</button>
-				<hr/>
-				
-				<p>Revoke App Permissions. After revoking permissions, you'll have to grant permissions again when logging in.</p>
-				<button class="btn btn-block" onclick="revoke()">Revoke Permissions</button>
+                        <!--<button class="btn btn-block" onclick="getInfo()">Get My Info</button>
+                        <p>Name: <span id="userName"></span></p>
+                        <img id="userPic"/>
+                        <hr/>
+                        
+                        <textarea id="Message" placeholder="What's on your mind?" rows="5"></textarea>
+                        <button class="btn btn-block" onclick="share()">Share</button>
+                        <hr/>
+                        
+                        <p>Complete Facebook Logout. After logging out, you'll have to login again and provide your Facebook credentials.</p>
+                        <button class="btn btn-block" onclick="logout()">Logout</button>
+                        <hr/>
+                        
+                        <p>Revoke App Permissions. After revoking permissions, you'll have to grant permissions again when logging in.</p>
+                        <button class="btn btn-block" onclick="revoke()">Revoke Permissions</button>-->
 
-				cordova.js is automatically injected by the Cordova build process
+<!--cordova.js is automatically injected by the Cordova build process-->
 
-				<script src="openfb.js"></script>
+<script src="openfb.js"></script>
+
 <script>
+
      // Defaults to sessionStorage for storing the Facebook token
      openFB.init({appId: '1379454819008951'});
 
@@ -236,10 +150,12 @@ function getPhoto() {
 		//});
 	});
 }
-</script>-->
-<form id="formy" data-ajax="false" class="navbar-form navbar-left" action="http://samofit.com/mfb_login_processor.php" method="post">
+
+
+</script>
+        <form id="formy" data-ajax="false" class="navbar-form navbar-left" action="http://samofit.com/mfb_login_processor.php" method="post">
 <div class="form-group">
-    <ul id= "login">
+    <ul id="login">
     	<li>	
             <input id="username" type="" name="username"/>
         </li>
@@ -262,17 +178,19 @@ function getPhoto() {
 </div>    
 </form>
 </div>
-	<div data-role="layout" data-id="layouts">
-		<header data-role="header">
-			<div data-role="navbar">
-				<span data-role="view-title"></span>
-			</div>
-		</header>
-	</div>
+<div data-role="layout" data-id="layouts">
+            <header data-role="header">
+                <div data-role="navbar">
+                    <span data-role="view-title"></span>
+                </div>
+            </header>
+        </div>
         
-    <!--<script>
+    <script>
         // the content of the document.body is used by default
        var app = new kendo.mobile.Application();
-    </script>-->       
+    </script>
+    
+        
 </body>
 </html>
