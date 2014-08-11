@@ -484,6 +484,39 @@
 	}
 	}
 
+	@media (max-width: 1300px) {
+		#carousel-example-generic{
+			display:none;       
+		}
+		#navvy{
+			display:none;       
+		}
+	}
+	/*  Galaxy Note2 - Portrait */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-device-height: 1200px) and (max-device-height: 1300px) and (orientation: portrait){
+   
+   #carousel-example-generic{
+			display:none;       
+		}
+		#navvy{
+			display:none;       
+		}
+	
+	}
+
+
+/*  Galaxy Note2 - landscape Due to the Screen Height and Width is changing during orientation changes */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-device-width: 1270px) and (max-device-width: 1300px) and (orientation: landscape) {
+    
+	#carousel-example-generic{
+			display:none;       
+		}
+		#navvy{
+			display:none;       
+		}
+	
+	}
+
 
 
 
