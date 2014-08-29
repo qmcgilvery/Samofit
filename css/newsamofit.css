@@ -520,6 +520,35 @@
 	}
 */
 
+.fb-button {
+	background-color: #4c66a4;
+	color: white;
+	padding: 10px 0;
+	height: 50px;
+	border-radius: 10px !important;
+	font-weight: bold !important;
+	margin: 0 10% 0 10%;
+	width: 80% !important;
+}
+
+.or-fb {
+	margin: 50px auto;
+	font-size: 1.2em;
+	position:relative;
+	border-bottom:1px solid black;
+	width:200px;
+}
+
+.sp-ab {
+	top: -12px;
+position: absolute;
+background-color: white;
+margin-left: 85px;
+min-width: 30px;
+text-align: center;
+}
+
+
 
 
 
