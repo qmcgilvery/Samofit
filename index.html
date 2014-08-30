@@ -174,8 +174,9 @@
 	</div>   
 	<script src="sdk.js"></script>
 	<script>
-		// the content of the document.body is used by default
-	   var app = new kendo.mobile.Application();
+		 new kendo.mobile.Application($(document.body), {
+         skin: "android-light"
+     });
 	</script>        
 </body>
 </html>
