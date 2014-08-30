@@ -101,7 +101,7 @@
 				<span data-role="view-title">Login</span>
 			</div>
 		</header>
-		<form action="http://www.samofit.com/login_mobile.php" method="post">
+		<form class="ajaxx" action="http://www.samofit.com/login_mobile.php" method="post">
 			<ul data-role="listview" id="login">
 				<li>
 					Username:
@@ -115,18 +115,18 @@
 					<button type="submit" value="login" class="btn btn-primary">Sign in</button>
 				</li>
 				<li>
-					Forgotten your <a href="recover.php?mode=username">username</a> or <a href="recover.php?mode=password">password?</a>
+					Forgotten your <a href="http://www.samofit.com/recover.php?mode=username">username</a> or <a href="http://www.samofit.com/recover.php?mode=password">password?</a>
 				<br>
-					Not a SaMo Fit member?<a href="http://www.samofit.com/register.php">Register Today!</a>
+					Not a SaMo Fit member?<a href="http://www.samofit.com/register.php"> Register Today!</a>
 				</li>
 			</ul>
 		</form>
 		<div class="or-fb"><span class="sp-ab">or</span></div>
 		<button class="btn btn-block fb-button" onclick="login();">Login with Facebook</button>
 
-		<!--
+		
 		<script src="main.js"></script>
-		<button class="btn btn-block" onclick="getInfo()">Get My Info</button>
+		<!--<button class="btn btn-block" onclick="getInfo()">Get My Info</button>
 		<p>Name: <span id="userName"></span></p>
 		<img id="userPic"/>
 		<hr/>
