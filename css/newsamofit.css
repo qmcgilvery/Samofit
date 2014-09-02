@@ -4,8 +4,7 @@
 /* containers */
 	body {
 	font:1em Arial, Helvetica, sans-serif;
-	margin:0;
-	background-color:black;
+	background-color:black !important;
 	}
 	#container {
     min-height:500px;
@@ -570,8 +569,8 @@ text-align: left;
 display: inline-block;
 }
 
-.p-10p {
-padding: 10%;
+.ajax {
+padding:8% 8% 0 8%;
 }
 
 

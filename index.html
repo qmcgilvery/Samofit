@@ -95,34 +95,38 @@
 	</script>
 </head>
 <body>
-	<div data-role="view" class="p-10p">
+	<div data-role="view">
 		<header data-role="header">
 			<div data-role="navbar">
 				<span data-role="view-title">Login</span>
 			</div>
 		</header>
-		<form class="ajaxx" action="http://samofit.com/login_mobile.php" method="post">
+		<form class="ajax" action="http://samofit.com/login_mobile.php" method="post">
 			<ul data-role="listview" id="login">
 				<li>
 					Email:
-					<input  type="text" name="username" />
+					<input type="text" name="username" />
 				</li>
 				<li>
 					Password:
 					<input type="password" name="password" />
 				</li>
 				<li>
-					<button type="submit" value="login" class="btn btn-primary">Sign in</button>
-				</li>
-				<li>
-					Forgotten your <a href="http://www.samofit.com/recover.php?mode=username">username</a> or <a href="http://www.samofit.com/recover.php?mode=password">password?</a>
-				<br>
-					Not a SaMo Fit member?<a href="http://www.samofit.com/register.php"> Register Today!</a>
+					<button type="submit" value="login" class="btn btn-default">Sign in</button>
 				</li>
 			</ul>
 		</form>
 		<div class="or-fb"><span class="sp-ab">or</span></div>
 		<button class="btn btn-block fb-button" onclick="login();">Login with Facebook</button>
+				<div class="ajax">
+				<ul data-role="listview">
+				<li>
+					Forgotten your <a href="http://www.samofit.com/recover.php?mode=username">username</a> or <a href="http://www.samofit.com/recover.php?mode=password">password?</a>
+				<br>
+					Not a SaMo Fit member?<a href="http://www.samofit.com/register.php"> Register Today!</a>
+				</li>
+				</ul>
+				</div>
 
 		<!--
 		<script src="main.js"></script>
