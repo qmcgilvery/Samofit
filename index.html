@@ -101,10 +101,11 @@
 				<span data-role="view-title">Login</span>
 			</div>
 		</header>
-		<form class="ajax" action="http://samofit.com/login_mobile.php" method="post">
+	<div class="bgc-gr ajax">
+		<form action="http://samofit.com/login_mobile.php" method="post">
 			<ul data-role="listview" id="login">
 				<li>
-					Email:
+					Username:
 					<input type="text" name="username" />
 				</li>
 				<li>
@@ -118,7 +119,8 @@
 		</form>
 		<div class="or-fb"><span class="sp-ab">or</span></div>
 		<button class="btn btn-block fb-button" onclick="login();">Login with Facebook</button>
-				<div class="ajax">
+	</div>		
+		<div class="ajax">
 				<ul data-role="listview">
 				<li>
 					Forgotten your <a href="http://www.samofit.com/recover.php?mode=username">username</a> or <a href="http://www.samofit.com/recover.php?mode=password">password?</a>
